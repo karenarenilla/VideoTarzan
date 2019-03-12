@@ -1,4 +1,4 @@
-import { prop, Typegoose, index } from "typegoose"
+import { prop, Typegoose } from "typegoose"
 
 class UserSchema extends Typegoose {
 
