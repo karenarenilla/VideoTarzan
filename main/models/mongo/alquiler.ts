@@ -7,6 +7,7 @@ class AlquilerSchema extends Typegoose {
     @prop({ ref: MovieModel, required: true, index: true }) movie?: string;
     @prop({ ref: UserModel, required: true, index: true }) user?: string;
     @prop() date?: Date;
+    @prop() address?: string;
 }
 
 export const AlquilerModel = new AlquilerSchema().getModelForClass(AlquilerSchema);
