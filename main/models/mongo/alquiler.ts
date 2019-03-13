@@ -1,11 +1,12 @@
-import { prop, Typegoose } from "typegoose"
-import { UserModel } from "./user";
-import { MovieModel } from "./movie";
+import { prop, Typegoose, Ref } from "typegoose"
+import UserSchema from "./user";
+import MovieSchema from "./movie";
 
 class AlquilerSchema extends Typegoose {
 
-    @prop({ ref: MovieModel, required: true, index: true }) movie?: string;
-    @prop({ ref: UserModel, required: true, index: true }) user?: string;
+    @prop({index: true, unique: true, required: true }) codigo?: string;
+    @prop({ ref: MovieSchema, required: true}) movie?: Ref<MovieSchema>;
+    @prop({ ref: UserSchema, required: true }) user?: Ref<UserSchema>;
     @prop() date?: Date;
     @prop() address?: string;
 }
