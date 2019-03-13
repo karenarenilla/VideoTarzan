@@ -1,6 +1,6 @@
 import { prop, Typegoose } from "typegoose"
 
-class MovieSchema extends Typegoose {
+export default class MovieSchema extends Typegoose {
 
     @prop({required: true, unique: true, index: true}) titulo?: string;
     @prop() sinopsis?: string;
